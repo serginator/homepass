@@ -11,3 +11,31 @@ half an hour per MAC, so when you start again with :40, 8 hours later, the acces
 you will get streetpasses every 8 hours.
 
 Done while talking with @duke_srg in [GBATemp](https://gbatemp.net/threads/how-to-have-a-homemade-streetpass-relay.352645/page-215#post-5214235)
+
+### oneliners
+
+If you execute `source .3ds-oneliners` you will add several aliases starting with 3ds
+in case you want to focus on a game. For example, `3ds-pokemon-xy-oras` will start a hotspot
+for pokemon following this [guide of MACs](https://docs.google.com/spreadsheet/ccc?key=0AvvH5W4E2lIwdEFCUkxrM085ZGp0UkZlenp6SkJablE&usp=drive_web#gid=0).
+
+The aliases are the following:
++ 3ds-SuperSmashBros
++ 3ds-eShop
++ 3ds-empty
++ 3ds-zelda-albw
++ 3ds-inazumaEleven
++ 3ds-pokemon-xy-oras
++ 3ds-all
++ 3ds-acnl-tomodachi-fantasy-life
++ 3ds-fireEmblem-eo4-smt4
++ 3ds-monsterHunter
++ 3ds-finalFantasy
++ 3ds-kidIcarus
++ 3ds-bravelyDefault-second
++ 3ds-samuraiWariors
++ 3ds-korg
++ 3ds-denpaMen
+
+If this is useful the content can be putted on .bash_aliases for example, or I
+could add an alias installer to append the aliases to that file.
+

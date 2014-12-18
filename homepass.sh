@@ -71,13 +71,11 @@ do
     for i in "${macs[@]}"
     do
         sudo ap-hotspot stop
-        sleep 10
+        sudo killall hostapd
         echo "Using $i MAC address for the hotspot"
         sudo ifconfig wlan0 down hw ether "$i" up
         sleep 5
         sudo ap-hotspot start
-        #sleep 10
-        #sudo ifconfig mon.wlan0 down hw ether "$i" up
         echo "Waiting 30 minutes..."
         echo ""
         sleep 1800
