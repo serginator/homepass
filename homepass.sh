@@ -13,12 +13,22 @@ echo "###########################################################"
 echo ""
 
 PWD=`pwd`
+oldmac=`cat /sys/class/net/wlan0/address`
 macs=(
     "4e:53:50:4f:4f:40" "4e:53:50:4f:4f:41" "4e:53:50:4f:4f:42" "4e:53:50:4f:4f:43"
     "4e:53:50:4f:4f:44" "4e:53:50:4f:4f:45" "4e:53:50:4f:4f:46" "4e:53:50:4f:4f:47"
     "4e:53:50:4f:4f:48" "4e:53:50:4f:4f:49" "4e:53:50:4f:4f:4A" "4e:53:50:4f:4f:4B"
     "4e:53:50:4f:4f:4C" "4e:53:50:4f:4f:4D" "4e:53:50:4f:4f:4E" "4e:53:50:4f:4f:4F"
 )
+
+function cleanup {
+    echo "Resetting mac address";
+    sudo ifconfig wlan0 down hw ether "$oldmac" up;
+    echo "Stopping ap-hotspot";
+    sudo ap-hotspot stop;
+    sudo killall hostapd
+}
+trap cleanup EXIT
 
 echo "Checking dependencies..."
 # Check if ap-hotspot is installed, if not, add repo and install
