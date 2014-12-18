@@ -36,6 +36,7 @@ The aliases are the following:
 + 3ds-korg
 + 3ds-denpaMen
 
-If this is useful the content can be putted on .bash_aliases for example, or I
-could add an alias installer to append the aliases to that file.
+To add the oneliners on startup please execute just once `./installOneliners.sh`.
+It will add the `.3ds-oneliners` file to your home, append it to `.bashrc`
+and source it.
 
