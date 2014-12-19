@@ -13,6 +13,7 @@ echo "###########################################################"
 echo ""
 
 PWD=`pwd`
+waittime=1800
 oldmac=`cat /sys/class/net/wlan0/address`
 macs=(
     "4e:53:50:4f:4f:40" "4e:53:50:4f:4f:41" "4e:53:50:4f:4f:42" "4e:53:50:4f:4f:43"
@@ -76,9 +77,9 @@ do
         sudo ifconfig wlan0 down hw ether "$i" up
         sleep 5
         sudo ap-hotspot start
-        echo "Waiting 30 minutes..."
+        echo "Waiting $(($waittime/60)) minutes..."
         echo ""
-        sleep 1800
+        sleep $waittime
     done
     echo ""
     echo "Starting the cycle again"
